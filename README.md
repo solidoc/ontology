@@ -9,25 +9,30 @@ Solidoc定义了一种文档的存储标准，它将富文本以[链接数据](h
 @prefix sdoc: <http://www.solidoc.net/ontologies#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 ```
 
 ### 集合
 
 | Ontology    |   Subclass Of  | Has Property | Brief |
-| --------   | ----- | ----  |
+| --------   | ----- | ----  | --- |
 | sdoc:Workspace |    |        |对应于Pod上的一个[LDP Basic Container](https://www.w3.org/TR/ldp/#ldpbc)
 | sdoc:Page          |     |   dct:title, sdoc:firstChild, dct:creator, dct:created, dct:modified   | 对应于Pod上的一个[RDF Source](https://www.w3.org/TR/ldp/#ldprs)
 | sdoc:Block         |     |  sdoc:nextBlock, sdoc:content  | 类似于文档中的段落
-| sdoc:Heading1   | sdoc:Block |  |
-| sdoc:Paragraph  | sdoc:Block |  |
-| sdoc:NumberedList   | sdoc:Block | sdoc:firstChild  |
-| sdoc:BulletedList   | sdoc:Block | sdoc:firstChild  |
+| sdoc:Heading1   | sdoc:Block |  | 大标题 |
+| sdoc:Heading2   | sdoc:Block |  | 中标题 |
+| sdoc:Heading3   | sdoc:Block |  | 小标题 |
+| sdoc:Paragraph  | sdoc:Block |  | 文本段落 |
+| sdoc:NumberedList   | sdoc:Block | sdoc:firstChild  | 有序列表 |
+| sdoc:BulletedList   | sdoc:Block | sdoc:firstChild  | 无序列表 |
+| sdoc:CheckList   | sdoc:Block | sdoc:firstChild  | 清单项目 |
 
 ### 属性
 
 | Ontology    |   Domain  | Range | Brief |
-| --------   | ----- | ----  |
-| sdoc:firstChild  |    |        |
-| sdoc:nextBlock |     |     |
-| sdoc:content    |  sdoc:Block   |  rdfs:Literal  |
+| --------   | ----- | ----  | --- |
+| sdoc:firstChild  |    |        | |
+| sdoc:nextBlock |     |     | |
+| sdoc:content    |  sdoc:Block   |  rdfs:Literal  | Block的内容 |
+| sdoc:checked    |  sdoc:CheckList   | xsd:boolean  | 清单项目是否完成 |
 
