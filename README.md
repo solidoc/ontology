@@ -25,12 +25,20 @@ Solidoc 定义了一种文档的存储标准，它将富文本以[链接数据](
 | sdoc:NumberedList | sdoc:Block  | sdoc:firstChild                                                    | 有序列表                                                                   |
 | sdoc:BulletedList | sdoc:Block  | sdoc:firstChild                                                    | 无序列表                                                                   |
 | sdoc:TaskList     | sdoc:Block  | sdoc:firstChild                                                    | 清单项目                                                                   |
+| sdoc:MathEquation | sdoc:Block  |                                                                    | 数学方程                                                                   |
+| sdoc:Pre          | sdoc:Block  |                                                                    | 代码段落                                                                   |
+| sdoc:Quote        | sdoc:Block  |                                                                    | 引用段落                                                                   |
+| sdoc:Hint         | sdoc:Block  |                                                                    | 提示段落                                                                   |
+| sdoc:Divider      | sdoc:Block  |                                                                    | 分割线                                                                     |
 
 ### 属性
 
-| Ontology        | Domain        | Range        | Brief            |
-| --------------- | ------------- | ------------ | ---------------- |
-| sdoc:firstChild |               |              |                  |
-| sdoc:nextBlock  |               |              |                  |
-| sdoc:content    | sdoc:Block    | rdfs:Literal | Block 的内容     |
-| sdoc:checked    | sdoc:TaskList | xsd:boolean  | 清单项目是否完成 |
+| Ontology        | Domain            | Range        | Brief            |
+| --------------- | ----------------- | ------------ | ---------------- |
+| sdoc:firstChild |                   |              |                  |
+| sdoc:nextBlock  |                   |              |                  |
+| sdoc:content    | sdoc:Block        | rdfs:Literal | Block 的内容     |
+| sdoc:checked    | sdoc:TaskList     | xsd:boolean  | 任务列表是否完成 |
+| sdoc:formula    | sdoc:MathEquation |              | 公式字符串       |
+| sdoc:language   | sdoc:Pre          |              | 代码块的语言类型 |
+| sdoc:hintStates | sdoc:Hint         |              | 提示状态         |
